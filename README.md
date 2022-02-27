@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+# React×TS×MUI プロジェクトのテンプレ
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+プロジェクト作成手順を以下にまとめる。
 
-## Available Scripts
+クローンせず以下手順での作成を推奨。
 
-In the project directory, you can run:
+## １：React × TS アプリの作成
 
-### `npm start`
+`npx create-react-app 【project-name】 --template typescript`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+『参考』
+https://typescript-jp.gitbook.io/deep-dive/browser
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## ２：MUIのインストール
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`yarn add @mui/material @emotion/react @emotion/styled`
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`yarn add @mui/icons-material`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+『参考』
+https://mui.com/getting-started/installation/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## ３：MUIスタイルシートの読み込み
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+public/index.htmlに以下２行を追加
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    
+『参考』
+https://mui.com/getting-started/installation/
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## ４：テスト
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+src/App.tsx
 
-## Learn More
+以下インポート文を追加
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`import Button from '@mui/material/Button';`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+App関数return内に以下を追記
+
+`<Button variant="contained">Hello World</Button>`
+
+ボタンが表示されていればOK！
